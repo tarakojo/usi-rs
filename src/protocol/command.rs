@@ -1,5 +1,7 @@
 use std::time::Duration;
 
+use serde::Serialize;
+
 use super::parser::EngineCommandParser;
 use crate::error::Error;
 
@@ -37,7 +39,7 @@ pub struct OptionParams {
 }
 
 /// Represents a kind of "score" parameter value in "info" command.
-#[derive(Clone, Debug, PartialEq, Eq, Hash)]
+#[derive(Clone, Debug, PartialEq, Eq, Hash, Serialize)]
 pub enum ScoreKind {
     CpExact,
     CpLowerbound,
