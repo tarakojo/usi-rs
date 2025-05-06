@@ -1,12 +1,12 @@
 use std::time::Duration;
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use super::parser::EngineCommandParser;
 use crate::error::Error;
 
 /// Represents a kind of "option" command value.
-#[derive(Clone, Debug, PartialEq, Eq, Hash)]
+#[derive(Clone, Debug, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum OptionKind {
     Check {
         default: Option<bool>,
